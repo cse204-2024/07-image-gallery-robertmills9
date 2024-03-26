@@ -4,21 +4,41 @@
     flex-wrap: wrap;
     gap: 10px; /* Margin between images */
 }
-
 .img-container {
     border: 2px solid #ddd; /* Border for images */
     overflow: hidden;
+    position: relative; /* Updated */
+    display: inline-block; /* Ensures the container behaves correctly */
 }
 
 .img-container img {
     width: 100%; /* Ensures images are not stretched */
     height: auto;
-    transition: transform 0.2s; /* Smooth transform */
+    transition: transform 0.2s; /* Smooth transform for zoom effect */
 }
 
-.img-container:hover img {
-    transform: scale(1.1); /* Zoom effect on hover */
+/* Hover effect for color overlay */
+.img-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Transparent by default */
+    transition: background-color 0.2s; /* Smooth transition */
+    z-index: 1; /* Ensure it's above the image but below the content */
 }
+
+.img-container:hover::before {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+}
+
+/* Ensure image zoom effect is still visible */
+.img-container:hover img {
+    transform: scale(1.1);
+}
+
 
 /* Style for enlarged image viewer */
 #image-viewer {
