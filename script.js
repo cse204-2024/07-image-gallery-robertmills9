@@ -12,16 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    document.getElementById('close-button').addEventListener('click', () => {
+    document.getElementById('close-btn').addEventListener('click', () => {
         viewer.classList.add('hidden');
     });
 
-    document.getElementById('prev-button').addEventListener('click', () => {
+    document.getElementById('prev-btn').addEventListener('click', () => {
         currentIndex = (currentIndex - 1 + images.length) % images.length;
         largeImage.src = images[currentIndex].src;
     });
 
-    document.getElementById('next-button').addEventListener('click', () => {
+    document.getElementById('next-btn').addEventListener('click', () => {
         currentIndex = (currentIndex + 1) % images.length;
         largeImage.src = images[currentIndex].src;
     });
