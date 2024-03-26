@@ -10,6 +10,7 @@
     overflow: hidden;
 }
 
+
 .img-container img {
     width: 100%; /* Ensures images are not stretched */
     height: auto;
