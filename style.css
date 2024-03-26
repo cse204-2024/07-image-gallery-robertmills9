@@ -34,9 +34,7 @@
     z-index: 1000;
 }
 
-.hidden {
-    display: none;
-}
+
 
 #close-btn, #prev-btn, #next-btn {
     position: absolute;
